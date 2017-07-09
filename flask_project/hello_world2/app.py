@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 import sys, os, logging, json
 from flask import Flask, render_template, request, current_app, g
 app = Flask(__name__)
@@ -12,7 +14,7 @@ def api_get(id):
     print "request.args:", request.args
     print "request.get_data()", request.get_data()
     print dir(request)
-    data = {"id": id}
+    data = {"id": id, "name":"中文"}
     return json.dumps(data)
 
 @app.route("/api/post", methods=["POST"])
@@ -22,7 +24,7 @@ def api_post():
     print "request.data", request.data
     print "request.form", request.form
     data = json.loads(request.data)
-    print "dict:", data
+    print "dict:", data, data["data"][0]
     return '''{"message": "hello"}'''
 
 # ...

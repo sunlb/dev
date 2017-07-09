@@ -20,7 +20,7 @@ function test1()
 		data: data,
 		dataType: 'json', 
 		success: function(data) {
-			alert(data.id);
+			alert(data.id+data.name);
 		},
 		error: function(xhr, type) {
 			alert(xhr);
@@ -32,7 +32,6 @@ function test2()
 {
    var data = {
     "name": "test2",
-    "age": 2,
     "data": ["测试", "bbb", "ccc"],
     "dict": {"a":1, "b":2, "c":[1,2,3]}
 	};

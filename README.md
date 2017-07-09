@@ -3,6 +3,7 @@
 ## flask learning
 
 ### helloworld
-> 最简单的flask程序
+> 简单的flask程序
 
-
+### helloworld2
+> 使用GET/POST方法
