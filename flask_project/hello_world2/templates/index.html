@@ -1,0 +1,62 @@
+<html>
+<head>
+Hello, World
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script>
+function test()
+{
+    alert("test")
+}
+
+function test1()
+{
+   var data = {
+    "name": "test",
+    "age": 1
+	};
+	$.ajax({
+		type: 'GET',
+		url: '/api/get/100',
+		data: data,
+		dataType: 'json', 
+		success: function(data) {
+			alert(data.id);
+		},
+		error: function(xhr, type) {
+			alert(xhr);
+		}
+	});
+}
+
+function test2()
+{
+   var data = {
+    "name": "test2",
+    "age": 2,
+    "data": ["测试", "bbb", "ccc"],
+    "dict": {"a":1, "b":2, "c":[1,2,3]}
+	};
+	$.ajax({
+		type: 'POST',
+		url: '/api/post',
+		data: JSON.stringify(data),
+		dataType: 'json', 
+		success: function(data) {
+			alert(data.message);
+		},
+		error: function(xhr, type) {
+			alert(xhr);
+		}
+	});
+}
+</script>
+</head>
+<body>
+<p/>
+<input type="button" value="test" onclick="test()" />
+<p/>
+<input type="button" value="test1" onclick="test1()" />
+<p/>
+<input type="button" value="test2" onclick="test2()" />
+</body>
+</html>
