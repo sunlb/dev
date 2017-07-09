@@ -1,13 +1,8 @@
 <html>
 <head>
-Hello, World
+<title>hello_world2 test</title>
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script>
-function test()
-{
-    alert("test")
-}
-
 function test1()
 {
    var data = {
@@ -20,7 +15,7 @@ function test1()
 		data: data,
 		dataType: 'json', 
 		success: function(data) {
-			alert(data.id+data.name);
+			alert(JSON.stringify(data));
 		},
 		error: function(xhr, type) {
 			alert(xhr);
@@ -39,9 +34,10 @@ function test2()
 		type: 'POST',
 		url: '/api/post',
 		data: JSON.stringify(data),
-		dataType: 'json', 
+        contentType: 'application/json; charset=UTF-8',
+        dataType: 'json', 
 		success: function(data) {
-			alert(data.message);
+			alert(JSON.stringify(data));
 		},
 		error: function(xhr, type) {
 			alert(xhr);
@@ -51,8 +47,6 @@ function test2()
 </script>
 </head>
 <body>
-<p/>
-<input type="button" value="test" onclick="test()" />
 <p/>
 <input type="button" value="test1" onclick="test1()" />
 <p/>

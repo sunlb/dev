@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 import sys, os, logging, json
-from flask import Flask, render_template, request, current_app, g
+from flask import Flask, render_template, request, current_app, g, jsonify
 app = Flask(__name__)
 
 # comment...
@@ -15,7 +15,7 @@ def api_get(id):
     print "request.get_data()", request.get_data()
     print dir(request)
     data = {"id": id, "name":"中文"}
-    return json.dumps(data)
+    return jsonify(data)
 
 @app.route("/api/post", methods=["POST"])
 def api_post():
